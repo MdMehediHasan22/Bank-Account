@@ -8,8 +8,12 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const previousWithdrawTotal = parseFloat(previousWithdrawTotalString);
     const currentWithdrawTotal = previousWithdrawTotal+newWithdrawAmount;
     withdrawTotalElement.innerText = currentWithdrawTotal;
-
-
-
     withdrawField.value = '';
+
+    // balance
+    const balanceTotalElement = document.getElementById('balance-total');
+    const balanceTotalString = balanceTotalElement.innerText;
+    const balanceTotal = parseFloat(balanceTotalString);
+    const newBalanceTotal = balanceTotal-newWithdrawAmount;
+    balanceTotalElement.innerText = newBalanceTotal;
 })
